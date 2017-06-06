@@ -1,6 +1,6 @@
 # proiecte-poo
 
-The has been tested using g++ compiler on linux.
+The code has been tested using g++ compiler on linux.
 
 # Compile
 
