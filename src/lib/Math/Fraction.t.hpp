@@ -10,11 +10,16 @@ namespace Math {
             T numerator;
             T denominator;
         public:
+            // constructor
             Fraction();
+            // constructor cu parametri
             Fraction(T numerator, T denominator);
+            // copy constructor
             Fraction(const Fraction<T>& obj);
+            // deconstructor
             ~Fraction();
 
+            // suprascrierea operatorilor: +, +=, -, -=, *, *=, /, /=
             Fraction<T> operator +(const Fraction<T>& f);
             Fraction<T>& operator +=(const Fraction<T>& f);
             Fraction<T> operator -();
@@ -25,20 +30,24 @@ namespace Math {
             Fraction<T> operator /(const Fraction<T>& f);
             Fraction<T>& operator /=(const Fraction<T>& f);
 
+            // suprascrierea operatorilor: =, ==, !=
             void operator =(const Fraction<T>& f);
             bool operator ==(const Fraction<T>& f);
             bool operator !=(const Fraction<T>& f);
 
+            // suprascrierea operatorului de intrare
             friend std::ostream& operator <<(std::ostream& output, const Fraction& f) {
                 output << f.numerator << " " << f.denominator << std::endl;
                 return output;
             };
 
+            // suprascrierea operatorului de iesire
             friend std::istream& operator >>(std::istream& input, Fraction& f) {
                 input >> f.numerator >> f.denominator;
                 return input;
             };
 
+            // cast operator
             operator T();
     };
 
