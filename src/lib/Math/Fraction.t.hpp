@@ -12,6 +12,8 @@ namespace Math {
         public:
             Fraction();
             Fraction(T numerator, T denominator);
+            Fraction(const Fraction<T>& obj);
+            ~Fraction();
 
             Fraction<T> operator +(const Fraction<T>& f);
             Fraction<T>& operator +=(const Fraction<T>& f);
@@ -41,10 +43,16 @@ namespace Math {
     };
 
     template <class T>
-    Fraction<T>::Fraction() {}
+    Fraction<T>::Fraction(): numerator(0), denominator(1) {}
 
     template <class T>
     Fraction<T>::Fraction(T numerator, T denominator): numerator(numerator), denominator(denominator) {}
+
+    template <class T>
+    Fraction<T>::Fraction(const Fraction<T>& obj): numerator(obj.numerator), denominator(obj.denominator) {}
+
+    template <class T>
+    Fraction<T>::~Fraction() {}
 
     template <class T>
     Fraction<T> Fraction<T>::operator +(const Fraction<T>& f) {
